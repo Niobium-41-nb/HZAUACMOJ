@@ -20,16 +20,27 @@
 - **缓存/消息队列**：Redis
 - **任务队列**：Celery
 - **评测沙箱**：Docker
-- **容器化**：Docker + Docker Compose
+- **部署方式**：Docker Compose 或 直接部署
 
 ## 快速开始
 
 ### 环境要求
 
-- Docker 20.0+ 
-- Docker Compose 1.29+
+- **使用Docker部署**：
+  - Docker 20.0+
+  - Docker Compose 1.29+
 
-### 启动服务
+- **直接部署**：
+  - Python 3.8+
+  - Node.js 14.0+
+  - npm 6.0+
+  - PostgreSQL
+  - Redis
+  - Docker (用于评测功能)
+
+### 部署方式
+
+#### 1. Docker部署 (推荐)
 
 ```bash
 # 启动所有服务
@@ -37,6 +48,29 @@ docker-compose up -d
 
 # 只启动特定服务
 docker-compose up -d backend frontend judge
+```
+
+#### 2. 直接部署 (无Docker)
+
+```bash
+# 安装依赖
+./start.sh --install-deps
+
+# 安装依赖和Docker (用于评测功能)
+./start.sh --install-all
+
+# 启动所有服务
+./start.sh
+
+# 只启动特定服务
+./start.sh --backend --frontend
+./start.sh --services backend judge
+
+# 停止服务
+./start.sh --down
+
+# 重启服务
+./start.sh --restart
 ```
 
 ### 开发流程
@@ -55,6 +89,7 @@ HZAUACMOJ/
 ├── frontend/          # Vue前端
 ├── judge/             # 评测机
 ├── docker-compose.yml # Docker Compose配置
+├── start.sh           # 无Docker启动脚本
 ├── .gitignore
 └── README.md
 ```
