@@ -1,71 +1,125 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
+# ==============================================================================
+# HOJ 项目 .gitignore 文件
+# 包含前端、后端、部署等所有模块的忽略规则
+# ==============================================================================
 
-# Django (if used)
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask
-.env
-.flaskenv
-*.sqlite3
-
-# Uploads
-uploads/
-*.zip
-*.tar.gz
-*.pdf
-*.docx
-
-# Debug files
-debug_*.py
-
-# Database
-instance/
-*.db
-
-# Sensitive files
-cookies.txt
-需求.md
-
-# IDE
-.vscode/
+# ------------------------------------------------------------------------------
+# IDE 相关文件
+# ------------------------------------------------------------------------------
 .idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.project
+*.classpath
+*.settings/
+
+# ------------------------------------------------------------------------------
+# 操作系统相关文件
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------------------------
+# 依赖管理文件
+# ------------------------------------------------------------------------------
+node_modules/
+*.lock
+*.log
+hoj-vue/package-lock.json
+hoj-vue/yarn.lock
+hoj-vue/pnpm-lock.yaml
+
+# ------------------------------------------------------------------------------
+# 日志文件
+# ------------------------------------------------------------------------------
+logs/
+*.log
+log/*.log
+*.log.*
+hoj/log/
+hoj-deploy/standAlone/hoj/log/
+hoj-deploy/log/
+
+# ------------------------------------------------------------------------------
+# 编译生成文件
+# ------------------------------------------------------------------------------
+/dist/
+build/
+*.jar
+*.war
+*.class
+target/
+hoj/target/
+hoj-springboot/target/
+hoj-vue/dist/
+hoj-vue/.nuxt/
+hoj-vue/.output/
+
+# ------------------------------------------------------------------------------
+# 环境配置文件
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+.env.*.production
+.env.test
+.env.production
+hoj-deploy/standAlone/.env
+hoj-deploy/standAlone/.env.local
+
+# ------------------------------------------------------------------------------
+# 数据库和数据目录
+# ------------------------------------------------------------------------------
+data/
+hoj/data/
+hoj-deploy/standAlone/hoj/data/
+hoj-deploy/standAlone/mysql/data/
+hoj-deploy/standAlone/redis/data/
+file/
+hoj/file/
+hoj-deploy/standAlone/hoj/file/
+testcase/
+hoj/testcase/
+hoj-deploy/standAlone/hoj/testcase/
+*.sql
+sql/*.sql
+sqlAndsetting/*.sql
+sqlAndsetting/*.zip
+
+# ------------------------------------------------------------------------------
+# 临时文件
+# ------------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
 *.swp
 *.swo
 *~
+.cache/
+.gradle/
+.mvn/
 
-# OS
-.DS_Store
-Thumbs.db
+# ------------------------------------------------------------------------------
+# Docker 相关
+# ------------------------------------------------------------------------------
+.docker/
+*.dockerignore
+hoj-deploy/standAlone/docker-compose.override.yml
 
-# Testing
-pytest_cache/
-.coverage
-htmlcov/
-
-# Build
-build/
-dist/
-*.egg-info/
-
-# Docker
-.dockerignore
-*.dockerfile
-
-# Logs
-logs/
-*.log
-
-# Environment
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# ------------------------------------------------------------------------------
+# 其他
+# ------------------------------------------------------------------------------
+*.pid
+*.seed
+*.pid.lock
+coverage/
+.nyc_output/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+*.tsbuildinfo.*
