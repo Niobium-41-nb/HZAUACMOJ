@@ -86,8 +86,8 @@ hoj-deploy/standAlone/hoj/file/
 testcase/
 hoj/testcase/
 hoj-deploy/standAlone/hoj/testcase/
-*.sql
-sql/*.sql
+# *.sql
+# sql/*.sql
 # sqlAndsetting/*.sql
 sqlAndsetting/*.zip
 
